@@ -1,0 +1,152 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Options - Proxy Auto Auth</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #eee;
+			color: #666;
+			font-size: .9em;
+		}
+		h1{
+			text-align: center;
+		}
+		h2{
+			margin: 5px 0 7px 0;
+			color: #0091b8;
+		}
+		label{
+			font-weight: bold;
+		}
+		#content{
+			margin: 20px auto;
+			width: 800px;
+		}
+		#status{
+			color: green;
+		}
+		.block{
+			box-shadow: 3px 3px 15px #666;
+			padding: 20px;
+			margin: 20px 0;
+			background-color: #fff;
+			overflow: hidden;
+		}
+		.block.error{
+			display:none;
+			background-color: #ffc6c6;
+		}
+		.column25, .column50, .column75{
+			float: left;
+			padding-right: 10px;
+		}
+		.column25:last-child, .column50:last-child, .column75:last-child{
+			padding-right: 0;
+		}
+		.column25{
+			width: 25%;
+		}
+		.column50{
+			width: 50%;
+		}
+		.column75{
+			width: 75%;
+		}
+		#message{
+			display: none;
+			position: absolute;
+			background-color: green;
+			color: #fff;
+			left: 50%;
+			top: 10px;
+			font-size: 1.2em;
+			padding: 10px 20px;
+			margin-left: -175px;
+			width: 350px;
+		}
+		input[type=text], input[type=password], input[type=number]{
+			padding: 5px;
+			margin: 5px 0;
+			border: 1px solid #ccc;
+			width: 250px;
+		}
+		.form-element{
+			margin-bottom: 10px;
+		}
+		button{
+			background-color: #0091b8;
+			border: none;
+			padding: 10px 30px;
+			color: #fff;
+			margin: 20px 20px 10px 0;
+		}
+		button:hover{
+			background-color: #666;
+		}
+		hr{
+			border: none;
+			border-top: 1px solid #eee;
+		}
+	</style>
+</head>
+<body>
+	<div id="message"></div>
+	<div id="content">
+		<h1>Proxy Auto Auth</h1>
+		<div id="blockError" class="block error">
+			No error message set.
+		</div>
+		<div class="block">
+			<div class="column50">
+				<h2>Proxy Credentials:</h2>
+				<div class="form-element">
+					<label for="login">Proxy username</label><br/>
+					<input type="text" id="login" placeholder="Username" />
+				</div>
+				<div class="form-element">
+					<label for="password">Proxy password</label><br/>
+					<input type="password" id="password" placeholder="password" />
+				</div>
+				<div class="form-element" title="See 'Bad credentials detection' on the right.">
+					<label for="retry">Unsuccessful attempts limit</label><em> (min: 2)</em><br/>
+					<input type="number" id="retry" placeholder="Number of attempts" />
+				</div>
+				<button id="save">Save</button><button id="reset">Reset</button>
+			</div>
+			<div class="column50">
+				<p><strong>To enable the extension, enter your proxy login and password in the form.</strong></p>
+				<p>Once it's done, you should never see any proxy login popup again.</p>
+				<hr/>
+				<p>
+					<strong>Bad credentials detection</strong><br/>
+					If you make a mistake when setting your credentials, your proxy server will keep sending the authentication request
+					again and again. This may cause you to be blacklisted depending on your proxy rules. That's why the <strong>Unsuccessful attempts limit</strong> exists.
+					If the authentication request is sent more times than the value you defined, the extension will temporarly auto-lock itself (you'll see a notification) to avoid any issue.<br/>
+					To unlock it, just reset or save your credentials again.
+				</p>
+				<p>
+					The auto-lock should almost never happen, but if it's the case, try setting a higher value.
+				</p>
+				<hr/>
+				<p>
+					<strong>Permissions</strong><br/>
+					As you probably saw, <strong>Proxy Auto Auth</strong> requires the permission to 
+					"view your data" on every sites. This permission is just necessary to achieve what this
+					extension does. But be sure that none of your data is stored or used in any way.
+				</p>
+			</div>
+		</div>
+		<div>
+			<span id="version"></span>
+		</div>
+	</div>
+</body>
+<script src="lib.js"></script>
+<script src="options.js"></script>
+</html>

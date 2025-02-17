@@ -1,0 +1,24 @@
+{
+   "action": {
+      "default_popup": "popup.html"
+   },
+   "author": "Vytal",
+   "background": {
+      "service_worker": "background.bundle.js"
+   },
+   "content_scripts": [ {
+      "js": [ "content_script.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Spoof time zone, geolocation, locale, user agent with added security.",
+   "icons": {
+      "128": "icon128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAld+pBtg7c3qOu0VB8JJ9SRVmKdbsLirojJBcztxPQnUdWgj/4TsMvzIRcPy42UcKl0UWL29kiD+2uq7erQzluc9oXCX1U8J2y2gHH7wb0JCrmumAZaLYw7hwIIt7W4MqXd4ah8vlO+i+Pr228Jj+NW85B3OLRi+ts1hR8YmbBFNJPjbzCvgJ58ZC4SeB3ZE5zthCyFQbPMhPPn8CWqBjKVMzNw6z6kdUQZaOfAbFGbMpD2i9wHbeyeEu+4NP0/mNWe1IcQAYW3+7EL4s/Z+YJTkEZJLSnl9RfJwiWeaIk2fATX4G9usK4LBCTK4GitJfbg7VXrcUvdd7WcZH+h92UQIDAQAB",
+   "manifest_version": 3,
+   "name": "Vytal - Spoof Timezone, Geolocation, Locale and security",
+   "permissions": [ "storage", "debugger" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.1.17"
+}

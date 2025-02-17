@@ -1,0 +1,48 @@
+{
+   "action": {
+   },
+   "background": {
+      "service_worker": "worker.js"
+   },
+   "commands": {
+      "_execute_action": {
+      }
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "/data/inject/main.js" ],
+      "match_about_blank": true,
+      "matches": [ "*://*/*" ],
+      "run_at": "document_start",
+      "world": "MAIN"
+   }, {
+      "all_frames": true,
+      "js": [ "/data/inject/isolated.js" ],
+      "match_about_blank": true,
+      "matches": [ "*://*/*" ],
+      "run_at": "document_start",
+      "world": "ISOLATED"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_description__",
+   "homepage_url": "https://webextension.org/listing/webrtc-protect.html",
+   "host_permissions": [ "*://*/*" ],
+   "icons": {
+      "128": "/data/icons/128.png",
+      "16": "/data/icons/16.png",
+      "256": "/data/icons/256.png",
+      "32": "/data/icons/32.png",
+      "48": "/data/icons/48.png",
+      "512": "/data/icons/512.png",
+      "64": "/data/icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlsMmJAY+7eHCYep3HpzU3YVGz4wGd6ehyWZ1BRDBP+wotRKT/R/J+sPcdcNUrO65iuOAEkMsjpHxM1f2qxImlbv/tltAWxJexAJFqXfmXGZFadf8DozfZCFOLhtkFJBe6IZtGOM6TL7xjmm3/vVABwBFKtBLM88qyqebA94Wm7tEGhIHeY2qFM9HVTJEgMff7zjlCAc5N3i2F9fLvb82QdqpLYsRefzbaDwL0szTx3ie754t20SennxJKKz8r5m8i10YbChlR7xHORK7NzUQPMTs4v9S+d+WRInKFeKncPCgpOJrNzR06opdd18ij9YIh8mYLjNcKJg2mwnkGo6LOQIDAQAB",
+   "manifest_version": 3,
+   "name": "WebRTC Protect - Protect IP Leak",
+   "options_ui": {
+      "page": "/data/options/index.html"
+   },
+   "permissions": [ "storage", "privacy", "contextMenus" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.2.4"
+}

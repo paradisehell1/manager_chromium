@@ -1,0 +1,23 @@
+{
+   "background": {
+      "scripts": [ "lib.js", "bg.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icon_32.png",
+      "default_title": "Proxy Auto Auth Options"
+   },
+   "description": "This extension enable you to automatically authenticate to your proxy once you set up your credentials.",
+   "icons": {
+      "128": "icon_128.png",
+      "16": "icon_16.png",
+      "32": "icon_32.png",
+      "64": "icon_64.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDQHf1/KtOZGogUMBvHa//JK0W0oARumP6wboi1mezzPImwco/qZ5BtTXLAz3mFp4+Xw+WJFBgnV0+CdQpwjLqZmeyq8BltsA5LJ10VPISyVkQDG3dOmj2A71VrU2gdZiiRUA9S3TROrT3Zujwy89JN+MTeEBqp5hKhC086kj+0aQIDAQAB",
+   "manifest_version": 2,
+   "name": "Proxy Auto Auth",
+   "options_page": "options.html",
+   "permissions": [ "notifications", "webRequest", "webRequestBlocking", "\u003Call_urls>" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0"
+}

@@ -1,0 +1,5 @@
+{
+   "description": {
+      "message": "Verbirgt Ihre private und öffentliche IP, indem der WebRTC-Netzwerkverkehr entsprechend konfiguriert wird."
+   }
+}
