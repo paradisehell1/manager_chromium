@@ -24,11 +24,7 @@ def launch_browser_with_profile(profile_path,proxy):
 
     options.add_argument("--disable-popup-blocking")
     options.add_argument(f'--proxy-server={proxy}')
-    options.add_argument("--disable-features=WebRTC")  # Отключение WebRTC
-    options.add_argument("--disable-features=WebRtcUdpTransport")  # Блокировка UDP WebRTC
-    options.add_experimental_option("prefs", {
-        "webrtc.ip_handling_policy": "disable_non_proxied_udp"
-    })
+
     driver = uc.Chrome( options=options)
 
     time.sleep(1)

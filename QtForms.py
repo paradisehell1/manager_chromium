@@ -21,6 +21,7 @@ class BrowserThread(QThread):
         self.proxy = proxy
         self.driver = None
 
+
     def run(self):
         try:
             # Настройка браузера
@@ -97,7 +98,32 @@ class MainWindow(QMainWindow):
 
         # Устанавливаем границы ячеек через стиль CSS
 
-
+        self.setStyleSheet("""
+                         QMainWindow {
+                             background-color: #2E3440;
+                         }
+                         QPushButton {
+                             background-color: #5E81AC;
+                             color: white;
+                             border-radius: 8px;
+                             padding: 5px;
+                         }
+                         QPushButton:hover {
+                             background-color: #81A1C1;
+                         }
+                         QTableWidget {
+                             background-color: #3B4252;
+                             color: white;
+                             border: none;
+                             gridline-color: #4C566A;
+                         }
+                         QHeaderView::section {
+                             background-color: #4C566A;
+                             color: white;
+                             padding: 5px;
+                             border: none;
+                         }
+                     """)
         # Заполняем таблицу
         self.fill_table("./profiles")
 
